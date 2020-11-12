@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <VS7_LimitProductList>
+            <version>0.1.0</version>
+        </VS7_LimitProductList>
+    </modules>
+    <global>
+        <models>
+            <vs7_limitproductlist>
+                <class>VS7_LimitProductList_Model</class>
+            </vs7_limitproductlist>
+        </models>
+    </global>
+    <frontend>
+        <events>
+            <catalog_block_product_list_collection>
+                <observers>
+                    <vs7_limitproductlist>
+                        <class>VS7_LimitProductList_Model_Observer</class>
+                        <method>checkLimitReached</method>
+                    </vs7_limitproductlist>
+                </observers>
+            </catalog_block_product_list_collection>
+        </events>
+    </frontend>
+</config>
